@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>InvestTools - Grow Your Income</title>
+  <meta name="description" content="Grow Your Income with InvestTools">
+  <meta name="author" content="AppEngine Corp">
+
+ 
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+ 
+ <!-- <script src="js/es6/es6-module-loader-dev.js"></script> -->
+ <script src="js/account.js"></script>
+ <script src="js/toolbox.js"></script>
+ <script src="js/app.js"></script>
+ 
+ 
+ 
+<script type="text/Javascript">
+// Your ES6 code
+//account test 
+//var myAcct  = new Account(); 
+var app = new App();
+
+var member = app.addMember('Capt',  'Kirk', '29', '111-000-4321', 'capptkirk@gmail.com', 'notpassword');
+
+var acct = app.addAccount(member.memberId, 1000000, 
+		InvestToolsFund.timeframe[0], InvestToolsFund.investmTarget[2], InvestToolsFund.perfFee[0], InvestToolsFund.mgmtFee[1]);
+
+
+//var member1 = app.getLoggedInMember();
+//console.log(member1);
+
+//app.login('capptkirk@gmail.com','notpassword');
+
+
+//console.log(acct);
+console.clear();
+console.log(acct.balance);
+acct.deposit(230000);
+acct.deposit(12000);
+
+//console.log(acct.balance);
+acct.withdraw(150000);
+//console.log(acct.balance);
+
+acct.creditAcct(80000);
+
+//console.log("acct credit " + acct.acctCredit);
+//console.log("initial bal " + acct.initBalance);
+//console.log("deposits " + acct.deposits);
+
+acct.deductFees(); 
+
+console.log ("mgmt fee $" + acct.getmgmtFeeAmount) 
+console.log ("perf fee $" + acct.perfFeeAmount);
+console.log ("total fee $" + acct.getTotalFeeAmount()); 
+console.log ("total credited after fees $" + acct.acctCredit); 
+
+	
+</script>
+  
+</head>
+
+<body>
+  
+</body>
+</html>
